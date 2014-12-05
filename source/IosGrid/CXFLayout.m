@@ -12,18 +12,26 @@
 
 @implementation CXFLayout
 
+
+-(id)initWithParams:(UIView *)parentView {
+  return [self initWithParams:parentView columns:12 lineSpacing:20.0f];
+}
+
 -(id)initWithParams:(UIView *)parentView columns:(NSInteger)columns {
-    
+    return [self initWithParams:parentView columns:columns lineSpacing:20.0f];
+}
+
+-(id)initWithParams:(UIView *)parentView columns:(NSInteger)columns lineSpacing:(CGFloat)lineSpacing {
     self = [super init];
     if(self == nil) {
         return nil;
     }
     
-
+    
     self.borderWithBase = 10.0f;
-    self.columnBorderWithBase = 3.0f;
-    self.columnBorderWidth = self.columnBorderWithBase;
-
+    self.columnBorderWidth = 3.0f;
+    self.lineSpacing = lineSpacing;
+    
     self.parentView = parentView;
     self.rows = [[NSMutableArray alloc]init];
     self.columns = columns;
@@ -32,7 +40,7 @@
     CGFloat w = widthBase - 2.0 * self.borderWithBase;
     
     NSInteger m = (int)w % (int)self.columns;
-
+    
     
     NSInteger n = (NSInteger)(m / 2);
     
@@ -44,8 +52,8 @@
     }
     
     self.columnWidth = (int)w / (int)self.columns;
-
-
+    
+    
     return self;
 }
 
@@ -77,7 +85,7 @@
             maxHeight = h > maxHeight ? h : maxHeight;
             [self.parentView addSubview:column.view];
         }
-        rowStart = rowStart + maxHeight + self.columnBorderWidth;
+        rowStart = rowStart + maxHeight + self.lineSpacing;
         columnStart = self.leftBorderWidth;
         maxHeight = 0.0f;
     }

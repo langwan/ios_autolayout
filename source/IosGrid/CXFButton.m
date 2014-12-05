@@ -28,12 +28,13 @@
     self.size = size;
     self.row = row;
     
-    if(self.size == CXF_BUTTON_SIZES_BIG) {
+    self.height = 40.0f;
+    if(self.size == CXF_BUTTON_SIZES_FULL) {
+        self.cols = 12;
+    } else if(self.size == CXF_BUTTON_SIZES_BIG) {
         self.cols = 6;
-        self.height = 40.0f;
     } else if(self.size == CXF_BUTTON_SIZES_COMMON) {
         self.cols = 4;
-        self.height = 40.0f;
     } else {
         self.cols = 3;
         self.height = 30.0f;
@@ -43,14 +44,27 @@
         self.backgroundColor = [UIColor yellowColor];
     } else if(self.scene == CXF_BUTTON_SCENE_IMPORTANT) {
         self.backgroundColor = [UIColor orangeColor];
+    } else if(self.scene == CXF_BUTTON_SCENE_LINK) {
+
     } else {
         self.backgroundColor = [UIColor grayColor];
     }
     
-    CXFLayoutColumn* column = [[CXFLayoutColumn alloc] initWithLayout:self cols:self.cols height:self.height];
-    [self.row addColumn:column];
+    self.column = [[CXFLayoutColumn alloc] initWithLayout:self cols:self.cols height:self.height];
+    [self.row addColumn:self.column];
     [self.row.layout.parentView addSubview:self];
     return self;
+}
+
+-(void)setTitle:(NSString *)title forState:(UIControlState)state {
+    if(self.scene == CXF_BUTTON_SCENE_LINK) {
+        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:title];
+        NSRange strRange = {0,[str length]};
+        [str addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:strRange];
+        [self setAttributedTitle:str forState:UIControlStateNormal];
+        return;
+    }
+    [super setTitle:title forState:state];
 }
 
 @end

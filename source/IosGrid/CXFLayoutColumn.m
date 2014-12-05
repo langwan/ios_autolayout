@@ -18,7 +18,6 @@
     self.view = view;
     self.cols = cols;
     self.height = height;
-  //  self.view.backgroundColor = [UIColor grayColor];
     return self;
 }
 

@@ -15,6 +15,8 @@
 		1E09DE751A24599800D5931A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E09DE741A24599800D5931A /* Images.xcassets */; };
 		1E09DE781A24599800D5931A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E09DE761A24599800D5931A /* LaunchScreen.xib */; };
 		1E09DE841A24599800D5931A /* IosGridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E09DE831A24599800D5931A /* IosGridTests.m */; };
+		1E1080CB1A314A6C00501279 /* CXFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1080CA1A314A6C00501279 /* CXFTextField.m */; };
+		1E1080CE1A31582C00501279 /* CXFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1080CD1A31582C00501279 /* CXFLabel.m */; };
 		1E33A8CE1A245B72007BFC79 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33A8CD1A245B72007BFC79 /* GridView.m */; };
 		1E33A8D11A25B3DE007BFC79 /* CXFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33A8D01A25B3DE007BFC79 /* CXFLayout.m */; };
 		1E33A8D41A25B787007BFC79 /* CXFLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33A8D31A25B787007BFC79 /* CXFLayoutRow.m */; };
@@ -49,6 +51,10 @@
 		1E09DE7D1A24599800D5931A /* IosGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E09DE821A24599800D5931A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E09DE831A24599800D5931A /* IosGridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosGridTests.m; sourceTree = "<group>"; };
+		1E1080C91A314A6C00501279 /* CXFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFTextField.h; sourceTree = "<group>"; };
+		1E1080CA1A314A6C00501279 /* CXFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFTextField.m; sourceTree = "<group>"; };
+		1E1080CC1A31582C00501279 /* CXFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFLabel.h; sourceTree = "<group>"; };
+		1E1080CD1A31582C00501279 /* CXFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFLabel.m; sourceTree = "<group>"; };
 		1E33A8CC1A245B72007BFC79 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		1E33A8CD1A245B72007BFC79 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
 		1E33A8CF1A25B3DE007BFC79 /* CXFLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFLayout.h; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 				1E33A8DA1A25C1A3007BFC79 /* CXFLayoutDevice.m */,
 				1E76831E1A2C52C000FC7962 /* CXFButton.h */,
 				1E76831F1A2C52C000FC7962 /* CXFButton.m */,
+				1E1080C91A314A6C00501279 /* CXFTextField.h */,
+				1E1080CA1A314A6C00501279 /* CXFTextField.m */,
+				1E1080CC1A31582C00501279 /* CXFLabel.h */,
+				1E1080CD1A31582C00501279 /* CXFLabel.m */,
 			);
 			name = cxf;
 			sourceTree = "<group>";
@@ -274,7 +284,9 @@
 			files = (
 				1E33A8DB1A25C1A3007BFC79 /* CXFLayoutDevice.m in Sources */,
 				1E09DE6A1A24599800D5931A /* AppDelegate.m in Sources */,
+				1E1080CE1A31582C00501279 /* CXFLabel.m in Sources */,
 				1E33A8D71A25B9A6007BFC79 /* CXFLayoutColumn.m in Sources */,
+				1E1080CB1A314A6C00501279 /* CXFTextField.m in Sources */,
 				1E09DE671A24599800D5931A /* main.m in Sources */,
 				1E09DE701A24599800D5931A /* ViewController.m in Sources */,
 				1E7683201A2C52C000FC7962 /* CXFButton.m in Sources */,

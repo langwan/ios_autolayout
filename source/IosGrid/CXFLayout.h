@@ -11,6 +11,9 @@
 #import "CXFLayoutRow.h"
 #import "CXFLayoutDevice.h"
 #import "CXFButton.h"
+#import "CXFTextField.h"
+#import "CXFLabel.h"
+
 
 @interface CXFLayout : NSObject
 
@@ -20,14 +23,18 @@
 @property(nonatomic, strong) NSMutableArray* rows;
 
 @property(nonatomic, assign) CGFloat columns;
-@property(nonatomic, assign) CGFloat columnBorderWithBase;
 @property(nonatomic, assign) CGFloat borderWithBase;
 @property(nonatomic, assign) CGFloat columnBorderWidth;
+@property(nonatomic, assign) CGFloat lineSpacing;
 @property(nonatomic, assign) CGFloat leftBorderWidth;
 @property(nonatomic, assign) CGFloat rightBorderWidth;
 @property(nonatomic, assign) CGFloat columnWidth;
 
+-(id)initWithParams:(UIView *)parentView;
 -(id)initWithParams:(UIView *)parentView columns:(NSInteger)columns;
+-(id)initWithParams:(UIView *)parentView columns:(NSInteger)columns lineSpacing:(CGFloat)lineSpacing;
+
+
 -(void)addRow:(CXFLayoutRow*) row;
 -(void)addColumn:(CXFLayoutRow*)row column:(CXFLayoutColumn*)column;
 -(void)draw;
